@@ -27,8 +27,8 @@ public class RxWebSocketDelegateProxy: DelegateProxy,
     }
 
     public static func currentDelegateFor(_ object: AnyObject) -> AnyObject? {
-        let webSocket = object as? WebSocket
-        return webSocket?.delegate
+        let webSocket = object as WebSocket
+        return webSocket.delegate as? NSObjectProtocol
     }
 
     private weak var forwardDelegate: WebSocketDelegate?
